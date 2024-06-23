@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.findViewTreeViewModelStoreOwner
 import com.neppplus.fragmentpractice.R
@@ -35,6 +36,15 @@ class FirstFragment:Fragment() {
 
         changeTextBtn.setOnClickListener{
             //임시로->텍스트뷰 문구를 안녕하세요 라고 변경
+            val contentTxt = view.findViewById<TextView>(R.id.contentTxt)
+            contentTxt.text="안녕하세요"
+        }
+
+        val toastBtn = view.findViewById<Button>(R.id.toastBtn)
+
+        toastBtn.setOnClickListener{
+            //임시로->텍스트뷰 문구를 안녕하세요 라고 변경
+            Toast.makeText(context!!, "프래그먼트의 토스트", Toast.LENGTH_SHORT).show()
             val contentTxt = view.findViewById<TextView>(R.id.contentTxt)
             contentTxt.text="안녕하세요"
         }
